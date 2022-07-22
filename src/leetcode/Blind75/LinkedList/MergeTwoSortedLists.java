@@ -1,5 +1,6 @@
 package leetcode.Blind75.LinkedList;
 
+import static leetcode.Blind75.LinkedList.ListNodeUtil.*;
 /**
  * You are given the heads of two sorted linked lists list1 and list2.
  *
@@ -8,15 +9,15 @@ package leetcode.Blind75.LinkedList;
  * Return the head of the merged linked list.
  */
 public class MergeTwoSortedLists {
-    class ListNode{
-        int value;
-        ListNode next;
-    }
     public static void main(String[] args) {
-
+        ListNode l1 = generateSampleLinkedList(5);
+        ListNode l2  = generateSampleLinkedList(4);
+        printLinkedList(l1);
+        printLinkedList(l2);
+        printLinkedList(mergeList(l1, l2));
     }
 
-    public ListNode mergeList(ListNode l1, ListNode l2){
+    public static ListNode mergeList(ListNode l1, ListNode l2){
         ListNode result = new ListNode();
         ListNode prev = result;
         while(l1 != null && l2 != null){
